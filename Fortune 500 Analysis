@@ -72,3 +72,27 @@ FROM fortune_companies
 GROUP BY company_name 
 ;
 ## Query 3. [CASE]
+SELECT company_name, avg_employee_tenure,
+CASE WHEN avg_employee_tenure <5 THEN "Less than 5 years"
+ELSE "More than 5 years"
+END AS Emp_tenure_length
+FROM fortune_companies
+ORDER BY avg_employee_tenure DESC
+;
+## Query 4. [HAVING]
+SELECT company_name, industry
+FROM fortune_companies
+GROUP BY industry
+HAVING revenue>200
+;
+
+##Query 5. [up to me!]
+SELECT company_name, industry, revenue,
+CASE WHEN revenue >=400 THEN "Equal to or more than 400"
+WHEN revenue <=200 THEN "Equal to or less than than 200"
+ELSE "Between 200 & 400"
+END AS revenue_category
+FROM fortune_companies
+GROUP BY industry
+ORDER BY industry desc
+;
