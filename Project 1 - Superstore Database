@@ -1,4 +1,5 @@
-#This project utilizes the following Superstore data: 
+## Project 1 in Break Into Tech Course
+##This project utilizes the following Superstore data: 
 
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
